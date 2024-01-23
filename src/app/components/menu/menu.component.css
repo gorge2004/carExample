@@ -1,0 +1,7 @@
+.p-dock, .p-dock-list-container {
+  pointer-events: none !important;
+}
+
+div {
+  background-color: blue!important;
+}

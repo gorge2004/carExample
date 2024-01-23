@@ -1,0 +1,104 @@
+<p-card header="INQUIRE NOW">
+  <p-toast></p-toast>
+
+  <ng-template [ngIf]="isLoading">
+    <p-progressBar
+      mode="indeterminate"
+      [style]="{ height: '6px' }"
+    ></p-progressBar>
+  </ng-template>
+
+  <form
+    [formGroup]="myForm"
+    (ngSubmit)="onSave()"
+    autocomplete="off"
+    #myFormRef
+  >
+    <div class="flex flex-column mb-3">
+      <label for="username">Name <small class="text-red-500">*</small> </label>
+      <input
+        pInputText
+        name="name"
+        aria-describedby="username-help"
+        formControlName="name"
+        placeholder="YOUR NAME "
+      />
+    </div>
+
+    <div class="flex flex-column mb-3">
+      <label for="username">Email <small class="text-red-500">*</small></label>
+      <input
+        pInputText
+        id="email"
+        name="email"
+        aria-describedby="email-help"
+        formControlName="email"
+        placeholder="YOURNAMEEMAIL@EXAMPLE.COM"
+      />
+    </div>
+
+    <div class="flex flex-column mb-3">
+      <label for="phoneNumber"
+        >Phone Number <small class="text-red-500">*</small></label
+      >
+      <input
+        pInputText
+        id="phoneNumber"
+        name="phoneNumber"
+        aria-describedby="username-help"
+        formControlName="phoneNumber"
+        placeholder="(213-4534123)"
+      />
+    </div>
+
+    <div class="flex flex-wrap mb-3">
+      <label for="comunicationType"
+        >Prefered Contact's Method <small class="text-red-500">*</small>:
+      </label>
+
+      <div class="flex align-items-center px-2">
+        <p-radioButton
+          formControlName="comunicationType"
+          name="comunicationType"
+          value="email"
+        ></p-radioButton>
+        <label for="ingredient2" class="ml-2">Email</label>
+      </div>
+
+      <div class="flex align-items-center px-2">
+        <p-radioButton
+          formControlName="comunicationType"
+          name="comunicationType"
+          value="call"
+        ></p-radioButton>
+        <label for="ingredient3" class="ml-2">Call</label>
+      </div>
+
+      <div class="flex align-items-center px-2">
+        <p-radioButton
+          formControlName="comunicationType"
+          name="comunicationType"
+          value="text"
+        ></p-radioButton>
+        <label for="ingredient4" class="ml-2">SMS</label>
+      </div>
+
+      <div class="flex align-items-center px-2">
+        <p-radioButton
+          formControlName="comunicationType"
+          name="comunicationType"
+          value="ws"
+        ></p-radioButton>
+        <label for="ingredient4" class="ml-2">Whatsapp</label>
+      </div>
+    </div>
+    <div class="flex flex-column mb-3">
+      <p-button
+        label="Inquire"
+        [outlined]="true"
+        severity="success"
+        type="submit"
+      ></p-button>
+    </div>
+  </form>
+</p-card>

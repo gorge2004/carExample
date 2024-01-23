@@ -1,0 +1,65 @@
+<div class="grid grid-nogutter	">
+  <div class="col-12 p-0 ">
+    <components-menu></components-menu>
+  </div>
+</div>
+<components-hero ></components-hero>
+<div class="grid grid-nogutter p-4">
+
+  <div class="col-6 col-offset-3">
+
+    <components-contact-form></components-contact-form>
+  </div>
+</div>
+<div class="grid grid-nogutter	">
+  <components-auto-available class="col-12"></components-auto-available>
+</div>
+
+<div class="grid grid-nogutter nested-grid	recommendation bg-blue-100 	">
+  <components-recommedation-section class="col-12"></components-recommedation-section>
+</div>
+<!-- <div class="col-4">
+  <div class="text-center p-3 border-round-sm bg-primary font-bold">
+    <p-carousel
+      [value]="products"
+      [numVisible]="3"
+      [numScroll]="1"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-product pTemplate="item">
+        <div
+          class="border-1 surface-border border-round m-2 text-center py-5 px-3"
+        >
+          <div class="mb-3">
+            <img
+              src="https://primefaces.org/cdn/primeng/images/demo/product/{{
+                product.image
+              }}"
+              [alt]="product.name"
+              class="w-6 shadow-2"
+            />
+          </div>
+          <div>
+            <h4 class="mb-1">{{ product.name }}</h4>
+            <h6 class="mt-0 mb-3">{{ "$" + product.price }}</h6>
+            <p-tag
+              [value]="product.inventoryStatus"
+              [severity]="getSeverity(product.inventoryStatus)"
+            ></p-tag>
+            <div
+              class="mt-5 flex align-items-center justify-content-center gap-2"
+            >
+              <p-button icon="pi pi-search" [rounded]="true" />
+              <p-button
+                icon="pi pi-star-fill"
+                [rounded]="true"
+                severity="secondary"
+              />
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>
+ -->

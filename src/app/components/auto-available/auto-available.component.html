@@ -1,0 +1,23 @@
+<p-carousel styleClass="px-3" [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true" [responsiveOptions]="responsiveOptions" [autoplayInterval]="4000">
+  <ng-template let-product pTemplate="item">
+      <div class="border-1 surface-border border-round m-2 text-center py-5 px-1">
+          <div class="mb-3">
+<!--               <img src="/{{baseURlImg}}/{{img }}" *ngFor="let img of  product.imgs" [alt]="product.name" class="w-6 shadow-2" />
+ -->              <p-galleria [value]=" product.imgs" [numVisible]="5" [circular]="true" [showItemNavigators]="true" [showThumbnails]="false" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '640px' }">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="baseURlImg+'/'+item" style="width: 100%; display: block;" />
+                </ng-template>
+            </p-galleria>
+          </div>
+          <div>
+              <h4 class="mb-1">{{ product.title }}</h4>
+              <h6 class="mt-0 mb-3">{{  product.price | currency }}</h6>
+              <h6 class="mt-0 mb-3"> <i class="pi pi-compass "></i> Houston, Texas</h6>
+              <p-tag [value]="product.condition" [severity]="getSeverity(product.condition)"></p-tag>
+              <div class="mt-5 flex align-items-center justify-content-center gap-2">
+              <p-button icon="pi pi-whatsapp" severity="success" [rounded]="true" label="Contact me" (onClick)="onClick( product.title)" />
+          </div>
+          </div>
+      </div>
+  </ng-template>
+</p-carousel>

@@ -1,0 +1,47 @@
+<div class="grid grid-nogutter">
+  <div class="lg:col-6 md:col-12 sm:col-12 lg:p-7 sm:p-0 md:p-0">
+    <p-carousel
+      [value]="images"
+      [numVisible]="3"
+      [numScroll]="1"
+      orientation="vertical"
+      verticalViewPortHeight="360px"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-image pTemplate="item">
+        <div class="product-item">
+          <div class="product-item-content">
+            <div class="flex justify-content-center flex-wrap">
+              <img
+                src="{{ image.itemImageSrc }}"
+                [alt]="image.name"
+                height="360px"
+                class="responsive"
+              />
+            </div>
+            <div>
+              <div
+                class="mt-5 mb-3 flex align-items-center justify-content-center gap-2"
+              >
+                <p-rating
+                  [(ngModel)]="rating"
+                  [readonly]="true"
+                  [cancel]="false"
+                ></p-rating>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="lg:col-6 md:col-12 sm:col-12">
+    <div class="text-center text-2xl h-100 p-3">
+      Our Toyota family is beaming with joy as our satisfied customers share
+      their exhilarating experiences with their new vehicles. From the seamless
+      purchase process to the first exhilarating drive, our customers rave about
+      the outstanding performance, cutting-edge features, and the sheer joy of
+      being behind the wheel of their new Toyota.
+    </div>
+  </div>
+</div>
